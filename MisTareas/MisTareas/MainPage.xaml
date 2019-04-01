@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:MisTareas"
+             x:Class="MisTareas.MainPage">
+
+    <!-- Creamos una barra de herramientas al cual le asociamos un envento Activated para cuando pulsemos sobre ella -->
+    <ContentPage.ToolbarItems>
+        <ToolbarItem  Text="Añadir tareas +" Activated="ToolbarItem_Activated"/>
+    </ContentPage.ToolbarItems>
+    
+    <!-- Ponemos un ListView para poder visualizar en la pagina de inicio el listado de tareas -->
+    <ListView x:Name="ListaTareasView">
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                
+                <!-- el texto mostrado en la lista (nombre de la tarea) se enlaza con la vista mediante la extensión de marcado {Binding} -->
+                <TextCell Text="{Binding Nombre}" Detail="Pendiente" />
+                
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+
+</ContentPage>
